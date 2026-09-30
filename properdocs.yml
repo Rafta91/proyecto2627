@@ -1,1 +1,17 @@
-site_name: My Docs
+site_name: Proyecto 2026/27
+nav:
+  - HOME: index.md
+  - BLOQUE 1:
+      - practica01.md
+theme:
+  name: readthedocs
+  locale: es
+  features:
+    - content.code.copy
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+  - js/copy-button.js
+
+extra_css:
+  - css/estilo.css
