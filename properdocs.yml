@@ -3,6 +3,7 @@ nav:
   - HOME: index.md
   - BLOQUE 1:
       - practica01.md
+      - practica02.md
 theme:
   name: readthedocs
   locale: es
