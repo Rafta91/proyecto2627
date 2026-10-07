@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Documentación proyecto26/27 - Proyecto 2026/27</title>
+    <title>Practica02 - Proyecto 2026/27</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var properdocs_page_name = "Documentaci\u00f3n proyecto26/27";
-        var properdocs_page_input_path = "practica01.md";
+        var properdocs_page_name = "Practica02";
+        var properdocs_page_input_path = "practica02.md";
         var properdocs_page_url = null;
       </script>
     
@@ -45,13 +45,11 @@
               </ul>
               <p class="caption"><span class="caption-text">BLOQUE 1</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Documentación proyecto26/27</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#practica-01">Práctica 01</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../practica01/">Documentación proyecto26/27</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../practica02/">Practica02</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Practica02</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
       </div>
@@ -69,7 +67,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
           <li class="breadcrumb-item">BLOQUE 1</li>
-      <li class="breadcrumb-item active">Documentación proyecto26/27</li>
+      <li class="breadcrumb-item active">Practica02</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -78,32 +76,80 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="documentacion-proyecto2627">Documentación proyecto26/27</h1>
-<h2 id="practica-01">Práctica 01</h2>
+                <h2 id="practica-02">Práctica 02</h2>
 <ul>
+<li><strong>Creación del archivo <code>ut02p02.html</code>:</strong></li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Unidad 2: Tarea 2&lt;/title&gt;
+    &lt;style&gt;
+        @import &quot;https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css&quot;;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form method=&quot;post&quot; action=&quot;ut02p02a.php&quot;&gt;
+        SUELDO:&lt;input class=&quot;input&quot; id=&quot;num&quot; name=&quot;sueldo&quot; type=&quot;number&quot; min=&quot;1001&quot; required&gt;
+        CARGO:&lt;select class=&quot;select&quot; name=&quot;cargo&quot;&gt;
+            &lt;option&gt;Base&lt;/option&gt;
+            &lt;option&gt;Directivo&lt;/option&gt;
+            &lt;option&gt;Alto cargo&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;input class=&quot;button is-link&quot; type=&quot;submit&quot; value=&quot;ENVIAR&quot;&gt;
+    &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>Contiene un formulario con SUELDO (<code>input</code>) que necesita un valor mínimo (<code>min</code>) de 1001 y es requerido (<code>required</code>).</li>
+<li>CARGO es un valor seleccionable (<code>select</code>) entre tres opciones: Base, Directivo y Alto cargo. Por defecto es Base.</li>
 <li>
-<p>Captura de la instalación de Git: <img alt="" src="../img/practica01-1.png" /></p>
+<p>Ambos valores se envían a <code>ut02p02a.php</code> como valores de variables recogidas con <code>$_POST</code>.</p>
 </li>
 <li>
-<p>GitHub CLI instalado y configurado: <img alt="" src="../img/practica01-2.png" /></p>
-</li>
-<li>
-<p>Herd instalado con la versión de PHP 8.4: <img alt="" src="../img/practica01-3.png" /></p>
-</li>
-<li>
-<p>repositorio <code>misitio</code> clonado en local: <img alt="" src="../img/practica01-4.png" /></p>
-</li>
-<li>
-<p>Herd enlazado al repositorio <code>misitio</code> y sirviéndolo en <code>HTTPS</code>: <img alt="" src="../img/practica01-5.png" /></p>
+<p><strong>Creación del archivo <code>ut02p02a.php</code>:</strong> </p>
 </li>
 </ul>
-<p>He utilizado como tema de visualización <code>readthedocs</code>.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;title&gt;Unidad 2: Tarea 2A&lt;/title&gt;
+    &lt;style&gt;
+        @import &quot;https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css&quot;;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;?php 
+        $sueldo = $_POST['sueldo'] ?? 1001;
+        $cargo = $_POST['cargo'] ?? &quot;Base&quot;;
+
+        if ($cargo == &quot;Base&quot;) { $complemento = 10; }
+        else if ($cargo == &quot;Directivo&quot;) { $complemento = 15; }
+        else { $complemento = 20; }
+
+        $sueldoFinal = (int)$sueldo + ((int)$sueldo * $complemento/100);
+    ?&gt;
+
+    &lt;p&gt;El sueldo base es de &lt;?php echo &quot;$sueldo&quot;; ?&gt;€&lt;/p&gt;
+    &lt;p&gt;El complemento es del &lt;?php echo &quot;$complemento&quot;; ?&gt;%&lt;/p&gt;
+    &lt;p&gt;El sueldo final es de &lt;?php echo &quot;$sueldoFinal&quot;; ?&gt;€&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li><code>$sueldo</code> y <code>$cargo</code> recogen los valores del formulario de la página anterior.</li>
+<li>Si no se les envia un valor les asigna uno por defecto.</li>
+<li>Dependiendo del cargo el complemento será de 10%, 15% o 20%.</li>
+<li>Se muestra mediante párrafos HTML el sueldo, el complemento y el sueldo final.</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
-        <a href=".." class="btn btn-neutral float-left" title="HOME"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
-        <a href="../practica02/" class="btn btn-neutral float-right" title="Practica02">Siguiente <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../practica01/" class="btn btn-neutral float-left" title="Documentación proyecto26/27"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
     </div>
 
   <hr/>
@@ -126,10 +172,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href=".." style="color: #fcfcfc">&laquo; Anterior</a></span>
+      <span><a href="../practica01/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
-    
-      <span><a href="../practica02/" style="color: #fcfcfc">Siguiente &raquo;</a></span>
     
   </span>
 </div>
